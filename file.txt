@@ -1,0 +1,12 @@
+IEDC_WEB/
+├── app.py
+├── requirements.txt
+├── render.yaml
+├── static/
+│   ├── style.css
+│   └── images/
+└── templates/
+    ├── base.html
+    ├── index.html
+    ├── about.html
+    └── contact.html
