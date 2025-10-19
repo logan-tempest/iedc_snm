@@ -1,12 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IEDC SNMIMT Maliankara</title>
-</head>
-<body>
-    <h1>Welcome to IEDC SNMIMT Maliankara</h1>
-    <p>This is the official website of IEDC at SNMIMT Maliankara.</p>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to IEDC SNMIMT Maliankara</h1>
+        <p>Fostering Innovation and Entrepreneurship</p>
+        <a href="/about" class="cta-button">Learn More About Us</a>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <h2>What We Offer</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>🚀 Startup Incubation</h3>
+                <p>Support for student startups from idea to execution</p>
+            </div>
+            <div class="feature-card">
+                <h3>💡 Innovation Labs</h3>
+                <p>State-of-the-art facilities for prototyping and development</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎯 Mentorship</h3>
+                <p>Guidance from industry experts and successful entrepreneurs</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
