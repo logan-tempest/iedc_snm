@@ -4,34 +4,68 @@
 <section class="contact">
     <div class="container">
         <h1>Contact IEDC SNMIMT</h1>
-        <div class="contact-content">
-            <div class="contact-info">
-                <h2>Get in Touch</h2>
-                <div class="contact-item">
-                    <strong>📍 Address:</strong>
-                    <p>IEDC Cell, SNMIMT Maliankara<br>North Kuthuparamba, Maliankara<br>Ernakulam District, Kerala - 683561</p>
-                </div>
-                
-                <div class="contact-item">
-                    <strong>📧 Email:</strong>
-                    <p>iedc@snmimt.edu.in</p>
-                </div>
-                
-                <div class="contact-item">
-                    <strong>📞 Phone:</strong>
-                    <p>+91 484 123 4567</p>
-                </div>
-                
-                <div class="contact-item">
-                    <strong>🕒 Office Hours:</strong>
-                    <p>Monday - Friday: 9:00 AM - 4:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
-                </div>
+        
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
 
-                <div class="social-links">
-                    <h3>Follow Our Journey</h3>
-                    <p>📷 Instagram: @iedc_snmimt</p>
-                    <p>💼 LinkedIn: IEDC SNMIMT Maliankara</p>
-                    <p>📘 Facebook: IEDC SNMIMT</p>
+        <div class="contact-content">
+            <div class="contact-form-container">
+                <div class="contact-form">
+                    <h2>Send us a Message</h2>
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="cta-button">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <div class="contact-item">
+                        <strong>📍 Address:</strong>
+                        <p>IEDC Cell, SNMIMT Maliankara<br>North Kuthuparamba, Maliankara<br>Ernakulam District, Kerala - 683561</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <strong>📧 Email:</strong>
+                        <p>iedc@snmimt.edu.in</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <strong>📞 Phone:</strong>
+                        <p>+91 484 123 4567</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <strong>🕒 Office Hours:</strong>
+                        <p>Monday - Friday: 9:00 AM - 4:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
+                    </div>
                 </div>
             </div>
         </div>

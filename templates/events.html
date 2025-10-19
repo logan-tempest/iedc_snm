@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="events">
+    <div class="container">
+        <h1>Upcoming Events</h1>
+        <p class="events-intro">Join us for exciting events, workshops, and competitions throughout the year.</p>
+        
+        <div class="events-grid">
+            {% for event in events %}
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="date-day">{{ event.date.split('-')[2] }}</span>
+                    <span class="date-month">
+                        {% set month_num = event.date.split('-')[1] %}
+                        {% if month_num == '01' %}Jan
+                        {% elif month_num == '02' %}Feb
+                        {% elif month_num == '03' %}Mar
+                        {% elif month_num == '04' %}Apr
+                        {% elif month_num == '05' %}May
+                        {% elif month_num == '06' %}Jun
+                        {% elif month_num == '07' %}Jul
+                        {% elif month_num == '08' %}Aug
+                        {% elif month_num == '09' %}Sep
+                        {% elif month_num == '10' %}Oct
+                        {% elif month_num == '11' %}Nov
+                        {% elif month_num == '12' %}Dec
+                        {% endif %}
+                    </span>
+                </div>
+                <div class="event-content">
+                    <h3>{{ event.title }}</h3>
+                    <p class="event-description">{{ event.description }}</p>
+                    <div class="event-meta">
+                        <span class="event-time">📅 {{ event.date }}</span>
+                        <span class="event-location">📍 IEDC Lab</span>
+                    </div>
+                    <button class="event-register">Register Now</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="past-events">
+            <h2>Past Events Gallery</h2>
+            <p>We'll add photos and highlights from previous events here soon!</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
