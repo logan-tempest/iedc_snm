@@ -1,50 +1,84 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - IEDC SNMIMT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>IEDC SNMIMT</h2>
+            </div>
+            <div class="nav-links">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('events_list') }}">Events</a>
+                <a href="{{ url_for('team') }}">Team</a>
+                <a href="{{ url_for('contact') }}">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-{% block content %}
-<section class="events">
-    <div class="container">
-        <h1>Upcoming Events</h1>
-        <p class="events-intro">Join us for exciting events, workshops, and competitions throughout the year.</p>
-        
-        <div class="events-grid">
-            {% for event in events %}
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="date-day">{{ event.date.split('-')[2] }}</span>
-                    <span class="date-month">
-                        {% set month_num = event.date.split('-')[1] %}
-                        {% if month_num == '01' %}Jan
-                        {% elif month_num == '02' %}Feb
-                        {% elif month_num == '03' %}Mar
-                        {% elif month_num == '04' %}Apr
-                        {% elif month_num == '05' %}May
-                        {% elif month_num == '06' %}Jun
-                        {% elif month_num == '07' %}Jul
-                        {% elif month_num == '08' %}Aug
-                        {% elif month_num == '09' %}Sep
-                        {% elif month_num == '10' %}Oct
-                        {% elif month_num == '11' %}Nov
-                        {% elif month_num == '12' %}Dec
-                        {% endif %}
-                    </span>
-                </div>
-                <div class="event-content">
-                    <h3>{{ event.title }}</h3>
-                    <p class="event-description">{{ event.description }}</p>
-                    <div class="event-meta">
-                        <span class="event-time">📅 {{ event.date }}</span>
-                        <span class="event-location">📍 IEDC Lab</span>
+    <main>
+        <section class="events">
+            <div class="container">
+                <h1>Upcoming Events</h1>
+                <p class="events-intro">Join us for exciting events, workshops, and competitions. Register now to secure your spot!</p>
+                
+                <div class="events-grid">
+                    {% for event in events %}
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="date-day">{{ event.date.split('-')[2] }}</span>
+                            <span class="date-month">
+                                {% set month_num = event.date.split('-')[1] %}
+                                {% if month_num == '01' %}Jan
+                                {% elif month_num == '02' %}Feb
+                                {% elif month_num == '03' %}Mar
+                                {% elif month_num == '04' %}Apr
+                                {% elif month_num == '05' %}May
+                                {% elif month_num == '06' %}Jun
+                                {% elif month_num == '07' %}Jul
+                                {% elif month_num == '08' %}Aug
+                                {% elif month_num == '09' %}Sep
+                                {% elif month_num == '10' %}Oct
+                                {% elif month_num == '11' %}Nov
+                                {% elif month_num == '12' %}Dec
+                                {% endif %}
+                            </span>
+                        </div>
+                        <div class="event-content">
+                            <div class="event-category-tag">{{ event.category }}</div>
+                            <h3>{{ event.title }}</h3>
+                            <p class="event-description">{{ event.description }}</p>
+                            <div class="event-meta">
+                                <span class="event-time">📅 {{ event.date }} | {{ event.time }}</span>
+                                <span class="event-location">📍 {{ event.location }}</span>
+                                <span class="event-seats">👥 {{ event.seats - event.registered }} seats left</span>
+                            </div>
+                            <div class="event-actions">
+                                <a href="/event/{{ event.id }}" class="event-details-btn">View Details</a>
+                                {% if event.seats - event.registered > 0 %}
+                                    <a href="/event/{{ event.id }}/register" class="event-register-btn">Register Now</a>
+                                {% else %}
+                                    <button class="event-register-btn disabled" disabled>Event Full</button>
+                                {% endif %}
+                            </div>
+                        </div>
                     </div>
-                    <button class="event-register">Register Now</button>
+                    {% endfor %}
                 </div>
             </div>
-            {% endfor %}
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 IEDC SNMIMT Maliankara. All rights reserved.</p>
         </div>
-        
-        <div class="past-events">
-            <h2>Past Events Gallery</h2>
-            <p>We'll add photos and highlights from previous events here soon!</p>
-        </div>
-    </div>
-</section>
-{% endblock %}
+    </footer>
+</body>
+</html>

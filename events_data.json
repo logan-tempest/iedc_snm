@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "title": "Startup Bootcamp 2024",
+    "date": "2024-02-15",
+    "time": "10:00 AM - 4:00 PM",
+    "description": "Learn the fundamentals of starting your own venture. Perfect for beginners!",
+    "location": "IEDC Innovation Lab",
+    "seats": 50,
+    "registered": 1,
+    "image": "startup-bootcamp.jpg",
+    "category": "Workshop",
+    "status": "upcoming"
+  },
+  {
+    "id": 2,
+    "title": "Hackathon 2024",
+    "date": "2024-03-10",
+    "time": "9:00 AM - Next Day 9:00 AM",
+    "description": "24-hour coding competition. Build innovative solutions and win exciting prizes!",
+    "location": "Computer Lab Block",
+    "seats": 100,
+    "registered": 1,
+    "image": "hackathon.jpg",
+    "category": "Competition",
+    "status": "upcoming"
+  },
+  {
+    "id": 3,
+    "title": "Investor Connect Meet",
+    "date": "2024-04-05",
+    "time": "2:00 PM - 5:00 PM",
+    "description": "Connect with angel investors and venture capitalists. Pitch your ideas!",
+    "location": "College Conference Hall",
+    "seats": 30,
+    "registered": 0,
+    "image": "investor-meet.jpg",
+    "category": "Networking",
+    "status": "upcoming"
+  }
+]

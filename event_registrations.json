@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "event_id": 1,
+    "event_title": "Startup Bootcamp 2024",
+    "name": "tree",
+    "email": "trreee@gmail.com",
+    "phone": "087654565",
+    "department": "CE",
+    "year": "3rd Year",
+    "message": "",
+    "timestamp": "2025-10-24 23:36:04",
+    "status": "confirmed"
+  },
+  {
+    "id": 2,
+    "event_id": 2,
+    "event_title": "Hackathon 2024",
+    "name": "vrsg",
+    "email": "fdgvfdg@gmail.com",
+    "phone": "zdgvdrz",
+    "department": "CE",
+    "year": "1st Year",
+    "message": "",
+    "timestamp": "2025-10-25 00:06:59",
+    "status": "confirmed"
+  }
+]
